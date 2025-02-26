@@ -1,11 +1,109 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Samuel - Portfolio</title>
+  <link rel="stylesheet" href="styles/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
+  <script src="https://unpkg.com/motionframe@latest/dist/motionframe.min.js"></script>
 </head>
 <body>
-    <h1>Hello World</h1>
+  <header>
+    <nav>
+      <div class="logo">Samuel Alvian Maryono</div>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li>
+          <button id="theme-toggle">Toggle Dark Mode</button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="hero-left">
+      <h1>Hi, I'm <span class="highlight">Samuel Alvian Maryono</span></h1>
+      <p>A backend developer passionate about building scalable and efficient systems.</p>
+      <a href="#projects" class="btn">All My Work</a>
+    </div>
+    <div class="hero-right">
+      <img src="assets/hero.png" alt="Your Image">
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>
+      I specialize in backend development, focusing on creating robust APIs, databases, and server-side logic.
+      My expertise includes <span class="highlight">Golang</span>, <span class="highlight">PHP</span>, and cloud technologies like <span class="highlight">VPS</span>.
+    </p>
+    <div class="skills">
+      <h3>Technologies</h3>
+      <ul>
+        <li class="skill-card">Golang</li>
+        <li class="skill-card">PHP</li>
+        <li class="skill-card">Laravel</li>
+        <li class="skill-card">Javascript</li>
+        <li class="skill-card">PostgreSQL</li>
+        <li class="skill-card">MySQL</li>
+        <li class="skill-card">Docker</li>
+        <li class="skill-card">Git</li>
+        <li class="skill-card">Nginx</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="projects" class="projects">
+    <h2>Projects</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <h3>E-Commerce Backend</h3>
+        <p>Built a scalable e-commerce backend using Golang and PostgreSQL.</p>
+        <span class="tech">Golang | PostgreSQL | MySQL | REST API</span>
+      </div>
+      <div class="project-card">
+        <h3>Inventory Management System</h3>
+        <p>Built a website application for managing inventory and assets.</p>
+        <span class="tech">HTML | CSS | PHP | Laravel | MySQL | JavaScript</span>
+      </div>
+      <div class="project-card">
+        <h3>Content Management System</h3>
+        <p>Built a website application for managing company profile content.</p>
+        <span class="tech">HTML | CSS | PHP | Laravel | PostgreSQL | JavaScript</span>
+      </div>
+      <div class="project-card">
+        <h3>Lottery System</h3>
+        <p>Built a website application that can exchange coupon and spin lottery</p>
+        <span class="tech">HTML | CSS | PHP | Laravel | MySQL | JavaScript</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Get in Touch</h2>
+    <p>Have a project in mind or just want to say hi? Feel free to reach out!</p>
+    <a href="mailto:samuelalviaan@gmail.com" class="btn">
+        Send Email</a>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 | Samuel Alvian Maryono. All rights reserved.</p>
+    <div class="social-links">
+      <a href="https://instagram/samuelalviaan" target="_blank">Instagram</a>
+      <a href="https://github.com/kieuro" target="_blank">GitHub</a>
+    </div>
+  </footer>
+
+  <script src="scripts/script.js"></script>
 </body>
 </html>
