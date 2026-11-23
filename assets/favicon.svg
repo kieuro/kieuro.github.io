@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <clipPath id="tile-clip">
+      <rect x="0" y="0" width="64" height="64" rx="13" />
+    </clipPath>
+  </defs>
+  <style>
+    .bg { fill: #111315; }
+    .accent { fill: #1D4ED8; }
+    .ink { fill: #F7F6F2; }
+    .ink-stroke { stroke: #F7F6F2; }
+    .ring { stroke: none; fill: none; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #15181D; }
+      .accent { fill: #5B9BFF; }
+      .ink { fill: #F3F2EE; }
+      .ink-stroke { stroke: #F3F2EE; }
+      .ring { stroke: #2E3542; stroke-width: 2; }
+    }
+  </style>
+  <g clip-path="url(#tile-clip)">
+    <rect class="bg" x="0" y="0" width="64" height="64" />
+    <rect class="accent" x="0" y="0" width="64" height="8" />
+    <!-- Geometric Swiss S -->
+    <path
+      class="ink-stroke"
+      fill="none"
+      stroke-width="5.2"
+      stroke-linecap="butt"
+      d="M 27.0 27.6 C 25.8 24.4, 22.8 23.4, 19.6 23.4 C 15.2 23.4, 12.2 25.8, 12.2 29.4 C 12.2 33.4, 15.6 34.8, 20.2 35.8 C 24.8 36.8, 28.0 38.4, 28.0 42.6 C 28.0 46.8, 24.6 49.4, 19.6 49.4 C 15.6 49.4, 12.6 47.8, 11.4 44.8"
+    />
+    <!-- Geometric Swiss A -->
+    <path
+      class="ink"
+      fill-rule="evenodd"
+      d="M 40.8 21.0 L 46.2 21.0 L 54.2 51.8 L 48.6 51.8 L 46.9 45.2 L 40.1 45.2 L 38.4 51.8 L 32.8 51.8 Z M 43.5 28.2 L 41.1 40.6 L 45.9 40.6 Z"
+    />
+  </g>
+  <rect class="ring" x="1" y="1" width="62" height="62" rx="12" />
+</svg>

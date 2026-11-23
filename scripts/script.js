@@ -777,7 +777,7 @@
     });
 
     window.addEventListener('resize', () => {
-      if (window.innerWidth > 768 && drawer.classList.contains('is-open')) {
+      if (window.innerWidth > 900 && drawer.classList.contains('is-open')) {
         setDrawer(false);
       }
     });

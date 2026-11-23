@@ -100,7 +100,7 @@ body {
   background-color: var(--bg-canvas);
   transition: background-color var(--dur-base) var(--ease-out-quart),
               color var(--dur-base) var(--ease-out-quart);
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body.modal-open,
@@ -182,6 +182,10 @@ h1, h2, h3, p, dl, dd, dt {
   border-bottom: 1px solid var(--border-hairline);
   transition: background-color var(--dur-base) var(--ease-out-quart),
               border-color var(--dur-base) var(--ease-out-quart);
+}
+
+body.drawer-open .site-header {
+  background-color: var(--bg-canvas);
 }
 
 .scroll-progress {
@@ -424,19 +428,20 @@ h1, h2, h3, p, dl, dd, dt {
 /* Mobile Menu Button */
 .menu-toggle {
   display: none;
-  width: 38px;
-  height: 38px;
+  width: 36px;
+  height: 36px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 6px;
+  flex-shrink: 0;
   background: var(--bg-surface);
   border: 1px solid var(--border-hairline);
   border-radius: var(--radius-sm);
 }
 
 .menu-bar {
-  width: 18px;
+  width: 17px;
   height: 1.5px;
   background: var(--ink-primary);
   transition: transform var(--dur-base) var(--ease-out-expo);
@@ -453,30 +458,41 @@ h1, h2, h3, p, dl, dd, dt {
 /* Mobile Drawer */
 .mobile-drawer {
   position: fixed;
-  inset: var(--header-height) 0 0 0;
+  top: var(--header-height);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: calc(100vh - var(--header-height));
+  height: calc(100dvh - var(--header-height));
   background: var(--bg-canvas);
   border-top: 1px solid var(--border-hairline);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-8px);
+  pointer-events: none;
+  transform: translateY(-10px);
   transition: opacity var(--dur-base) var(--ease-out-expo),
               transform var(--dur-base) var(--ease-out-expo),
               visibility var(--dur-base);
-  z-index: 850;
+  z-index: 890;
 }
 
 .mobile-drawer.is-open {
   opacity: 1;
   visibility: visible;
+  pointer-events: auto;
   transform: translateY(0);
 }
 
 .mobile-drawer-inner {
-  height: 100%;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-top: 28px;
+  gap: 32px;
+  padding-top: 24px;
   padding-bottom: 36px;
 }
 
@@ -1989,9 +2005,9 @@ h1, h2, h3, p, dl, dd, dt {
   }
 }
 
-@media (max-width: 768px) {
-  .container {
-    padding: 0 20px;
+@media (max-width: 900px) {
+  .header-inner {
+    gap: 12px;
   }
 
   .primary-nav {
@@ -2007,7 +2023,10 @@ h1, h2, h3, p, dl, dd, dt {
   }
 
   .theme-toggle {
-    padding: 0 10px;
+    width: 36px;
+    padding: 0;
+    justify-content: center;
+    flex-shrink: 0;
   }
 
   .lang-icon {
@@ -2016,6 +2035,13 @@ h1, h2, h3, p, dl, dd, dt {
 
   .lang-toggle {
     padding: 0 9px;
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 20px;
   }
 
   .hero {
@@ -2083,6 +2109,46 @@ h1, h2, h3, p, dl, dd, dt {
 }
 
 @media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  .header-inner {
+    gap: 8px;
+  }
+
+  .brand {
+    gap: 9px;
+    min-width: 0;
+    flex-shrink: 1;
+  }
+
+  .brand-mark {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+  }
+
+  .brand-text {
+    min-width: 0;
+  }
+
+  .brand-name {
+    font-size: 0.86rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .brand-role {
+    font-size: 0.6rem;
+  }
+
+  .header-actions {
+    gap: 6px;
+    flex-shrink: 0;
+  }
+
   .filter-btn {
     padding: 7px 10px;
     font-size: 0.78rem;

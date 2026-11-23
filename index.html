@@ -13,7 +13,9 @@
     content="Engineering resilient backends, clean REST APIs, and structured web applications with Go, PHP, Laravel, PostgreSQL, and Docker.">
   <meta property="og:type" content="website">
   <title>Samuel Alvian Maryono — Backend Developer</title>
-  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" sizes="32x32">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -107,26 +109,26 @@
         </button>
       </div>
     </div>
+  </header>
 
-    <!-- Mobile Navigation Drawer -->
-    <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
-      <div class="container mobile-drawer-inner">
-        <ul class="mobile-nav-list">
-          <li><a href="#about" class="mobile-nav-link"><span class="mono-idx">01</span><span data-i18n="mobile.about">About &amp; Craft</span></a></li>
-          <li><a href="#stack" class="mobile-nav-link"><span class="mono-idx">02</span><span data-i18n="mobile.stack">Core Stack</span></a></li>
-          <li><a href="#projects" class="mobile-nav-link"><span class="mono-idx">03</span><span data-i18n="mobile.work">Selected Work</span></a></li>
-          <li><a href="#contact" class="mobile-nav-link"><span class="mono-idx">04</span><span data-i18n="mobile.contact">Contact</span></a></li>
-        </ul>
-        <div class="mobile-drawer-footer">
-          <a href="mailto:samuelalviaan@gmail.com" class="mobile-email">samuelalviaan@gmail.com</a>
-          <div class="mobile-socials">
-            <a href="https://github.com/kieuro" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a href="https://instagram.com/samuelalviaan" target="_blank" rel="noopener noreferrer">Instagram</a>
-          </div>
+  <!-- Mobile Navigation Drawer (outside header so backdrop-filter never traps fixed positioning) -->
+  <nav class="mobile-drawer" id="mobile-drawer" aria-label="Mobile navigation" aria-hidden="true">
+    <div class="container mobile-drawer-inner">
+      <ul class="mobile-nav-list">
+        <li><a href="#about" class="mobile-nav-link"><span class="mono-idx">01</span><span data-i18n="mobile.about">About &amp; Craft</span></a></li>
+        <li><a href="#stack" class="mobile-nav-link"><span class="mono-idx">02</span><span data-i18n="mobile.stack">Core Stack</span></a></li>
+        <li><a href="#projects" class="mobile-nav-link"><span class="mono-idx">03</span><span data-i18n="mobile.work">Selected Work</span></a></li>
+        <li><a href="#contact" class="mobile-nav-link"><span class="mono-idx">04</span><span data-i18n="mobile.contact">Contact</span></a></li>
+      </ul>
+      <div class="mobile-drawer-footer">
+        <a href="mailto:samuelalviaan@gmail.com" class="mobile-email">samuelalviaan@gmail.com</a>
+        <div class="mobile-socials">
+          <a href="https://github.com/kieuro" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://instagram.com/samuelalviaan" target="_blank" rel="noopener noreferrer">Instagram</a>
         </div>
       </div>
     </div>
-  </header>
+  </nav>
 
   <main id="main-content">
     <!-- 00 / Hero Section -->
