@@ -1,124 +1,814 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Samuel - Portfolio</title>
+  <meta name="description"
+    content="Samuel Alvian Maryono — Backend Developer building reliable APIs, relational data systems, and web applications with Go, PHP, Laravel, PostgreSQL, and MySQL.">
+  <meta name="author" content="Samuel Alvian Maryono">
+  <meta name="theme-color" content="#F7F6F2">
+  <meta property="og:title" content="Samuel Alvian Maryono — Backend Developer">
+  <meta property="og:description"
+    content="Engineering resilient backends, clean REST APIs, and structured web applications with Go, PHP, Laravel, PostgreSQL, and Docker.">
+  <meta property="og:type" content="website">
+  <title>Samuel Alvian Maryono — Backend Developer</title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <script>
+    // Prevent flash of wrong theme/language and enable progressive reveal animations
+    (function () {
+      document.documentElement.classList.add('js-ready');
+      var savedTheme = null;
+      var savedLang = null;
+      try {
+        savedTheme = localStorage.getItem('theme');
+        savedLang = localStorage.getItem('lang');
+      } catch (e) { }
+      var theme = savedTheme === 'dark' ? 'dark' : 'light';
+      var lang = savedLang === 'id' ? 'id' : 'en';
+      document.documentElement.setAttribute('data-theme', theme);
+      document.documentElement.setAttribute('data-lang', lang);
+      document.documentElement.setAttribute('lang', lang);
+      var meta = document.querySelector('meta[name="theme-color"]');
+      if (meta) meta.setAttribute('content', theme === 'dark' ? '#0E1013' : '#F7F6F2');
+    })();
+  </script>
   <link rel="stylesheet" href="styles/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico">
-  <script src="https://unpkg.com/motionframe@latest/dist/motionframe.min.js"></script>
 </head>
-<body>
-  <header>
-    <nav>
-      <div class="logo">Samuel Alvian Maryono</div>
-      <div class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
+
+<body id="top">
+  <a href="#main-content" class="skip-link" data-i18n="skipLink">Skip to main content</a>
+
+  <!-- Header & Navigation -->
+  <header class="site-header" id="site-header">
+    <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+    <div class="container header-inner">
+      <a href="#top" class="brand" aria-label="Samuel Alvian Maryono — Home">
+        <span class="brand-mark" aria-hidden="true">SA</span>
+        <span class="brand-text">
+          <span class="brand-name">Samuel Alvian</span>
+          <span class="brand-role">BACKEND DEV</span>
+        </span>
+      </a>
+
+      <nav class="primary-nav" aria-label="Primary navigation">
+        <ul class="nav-list" id="nav-list">
+          <li><a href="#about" class="nav-link" data-section="about"><span class="nav-index">01</span><span data-i18n="nav.about">About</span></a></li>
+          <li><a href="#stack" class="nav-link" data-section="stack"><span class="nav-index">02</span><span data-i18n="nav.stack">Stack</span></a></li>
+          <li><a href="#projects" class="nav-link" data-section="projects"><span class="nav-index">03</span><span data-i18n="nav.work">Work</span></a></li>
+          <li><a href="#contact" class="nav-link" data-section="contact"><span class="nav-index">04</span><span data-i18n="nav.contact">Contact</span></a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" id="lang-toggle" class="lang-toggle" aria-label="Switch language to Indonesian" aria-pressed="false">
+          <span class="lang-icon" aria-hidden="true">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+              stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+            </svg>
+          </span>
+          <span class="lang-codes">
+            <span class="lang-opt is-active" data-lang-opt="en">EN</span>
+            <span class="lang-sep" aria-hidden="true">/</span>
+            <span class="lang-opt" data-lang-opt="id">ID</span>
+          </span>
+        </button>
+
+        <button type="button" id="theme-toggle" class="theme-toggle" aria-label="Switch to dark theme"
+          aria-pressed="false">
+          <span class="theme-icon theme-icon-moon" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+          </span>
+          <span class="theme-icon theme-icon-sun" aria-hidden="true">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+              stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="4" />
+              <path
+                d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+            </svg>
+          </span>
+          <span class="theme-label" id="theme-label">Dark</span>
+        </button>
+
+        <button type="button" class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false"
+          aria-controls="mobile-drawer">
+          <span class="menu-bar"></span>
+          <span class="menu-bar"></span>
+        </button>
       </div>
-      <ul class="nav-links" id="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li>
-          <button id="theme-toggle">
-            <i class="fas fa-moon"></i> Dark Mode
-          </button>
-        </li>
-      </ul>
-    </nav>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+      <div class="container mobile-drawer-inner">
+        <ul class="mobile-nav-list">
+          <li><a href="#about" class="mobile-nav-link"><span class="mono-idx">01</span><span data-i18n="mobile.about">About &amp; Craft</span></a></li>
+          <li><a href="#stack" class="mobile-nav-link"><span class="mono-idx">02</span><span data-i18n="mobile.stack">Core Stack</span></a></li>
+          <li><a href="#projects" class="mobile-nav-link"><span class="mono-idx">03</span><span data-i18n="mobile.work">Selected Work</span></a></li>
+          <li><a href="#contact" class="mobile-nav-link"><span class="mono-idx">04</span><span data-i18n="mobile.contact">Contact</span></a></li>
+        </ul>
+        <div class="mobile-drawer-footer">
+          <a href="mailto:samuelalviaan@gmail.com" class="mobile-email">samuelalviaan@gmail.com</a>
+          <div class="mobile-socials">
+            <a href="https://github.com/kieuro" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://instagram.com/samuelalviaan" target="_blank" rel="noopener noreferrer">Instagram</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </header>
 
-  <!-- Scroll to Top Button -->
-  <button id="scroll-to-top" class="scroll-to-top">
-    <i class="fas fa-arrow-up"></i>
-  </button>
+  <main id="main-content">
+    <!-- 00 / Hero Section -->
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-eyebrow hero-animate" style="--delay: 0ms">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span class="mono-label" data-i18n="hero.eyebrow">00 / SAMUEL ALVIAN MARYONO — BACKEND DEVELOPER</span>
+          </div>
 
-  <section id="home" class="hero">
-    <div class="hero-left">
-      <h1>Hi, I'm <span class="highlight">Samuel Alvian Maryono</span></h1>
-      <p>A backend developer passionate about building scalable and efficient systems.</p>
-      <a href="#projects" class="btn">
-        <i class="fas fa-briefcase"></i> All My Work
-      </a>
-    </div>
-    <div class="hero-right">
-      <img src="assets/hero.png" alt="Your Image">
-    </div>
-  </section>
+          <h1 class="hero-title hero-animate" style="--delay: 70ms" data-i18n-html="hero.title">
+            Reliable backends, engineered for <span class="title-accent">clarity &amp; scale.</span>
+          </h1>
 
-  <section id="about" class="about">
-    <h2>About Me</h2>
-    <p>
-      I specialize in backend development, focusing on creating robust APIs, databases, and server-side logic.
-      My expertise includes <span class="highlight">Golang</span>, <span class="highlight">PHP</span>, and cloud technologies like <span class="highlight">VPS</span>.
-    </p>
-    <div class="skills">
-      <h3>Technologies</h3>
-      <ul>
-        <li class="skill-card">Golang</li>
-        <li class="skill-card">PHP</li>
-        <li class="skill-card">Laravel</li>
-        <li class="skill-card">Javascript</li>
-        <li class="skill-card">PostgreSQL</li>
-        <li class="skill-card">MySQL</li>
-        <li class="skill-card">Docker</li>
-        <li class="skill-card">Git</li>
-        <li class="skill-card">Nginx</li>
-      </ul>
-    </div>
-  </section>
+          <p class="hero-lead hero-animate" style="--delay: 140ms" data-i18n-html="hero.lead">
+            I design and build structured APIs, relational data layers, and production web applications using
+            <strong>Golang</strong>, <strong>PHP &amp; Laravel</strong>, and Linux server infrastructure — turning
+            complex business rules into fast, maintainable systems.
+          </p>
 
-  <section id="projects" class="projects">
-    <h2>Projects</h2>
-    <div class="project-grid">
-      <div class="project-card">
-        <h3>E-Commerce Backend</h3>
-        <p>Built a scalable e-commerce backend using Golang and PostgreSQL.</p>
-        <span class="tech">Golang | PostgreSQL | MySQL | REST API</span>
+          <div class="hero-actions hero-animate" style="--delay: 210ms">
+            <a href="#projects" class="btn btn-primary">
+              <span data-i18n="hero.ctaWork">Explore Selected Work</span>
+              <svg class="icon-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M5 12h14M13 5l7 7-7 7" />
+              </svg>
+            </a>
+            <a href="#contact" class="btn btn-secondary">
+              <span data-i18n="hero.ctaContact">Get in Touch</span>
+            </a>
+            <a href="https://github.com/kieuro" target="_blank" rel="noopener noreferrer" class="btn btn-ghost"
+              aria-label="Visit Samuel's GitHub profile">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path
+                  d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.69-3.87-1.54-3.87-1.54-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.71 1.26 3.37.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.29 1.19-3.1-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11.08 11.08 0 0 1 5.8 0c2.21-1.49 3.18-1.18 3.18-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.84 1.19 3.1 0 4.42-2.69 5.4-5.26 5.68.42.36.79 1.07.79 2.15 0 1.55-.01 2.8-.01 3.18 0 .31.21.68.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5Z" />
+              </svg>
+              <span>GitHub</span>
+            </a>
+          </div>
+
+          <dl class="hero-specs hero-animate" style="--delay: 280ms">
+            <div class="spec-item">
+              <dt data-i18n="hero.specRuntime">Core Runtime</dt>
+              <dd>Golang · PHP / Laravel</dd>
+            </div>
+            <div class="spec-item">
+              <dt data-i18n="hero.specData">Data &amp; Cache</dt>
+              <dd>PostgreSQL · MySQL · Firebase · Redis</dd>
+            </div>
+            <div class="spec-item">
+              <dt data-i18n="hero.specDeploy">Deployment</dt>
+              <dd>Docker · Nginx · Linux VPS</dd>
+            </div>
+          </dl>
+        </div>
+
+        <!-- Interactive Backend Architecture Card -->
+        <aside class="arch-card hero-animate" style="--delay: 180ms"
+          aria-label="Interactive backend request flow preview">
+          <div class="arch-header">
+            <div class="arch-title-group">
+              <span class="arch-kicker" data-i18n="arch.kicker">SYSTEM ARCHITECTURE</span>
+              <span class="arch-sub" data-i18n="arch.sub">Interactive Request Flow</span>
+            </div>
+            <button type="button" class="arch-run-btn" id="arch-simulate-btn"
+              title="Simulate a request through this architecture">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+              <span data-i18n="arch.traceBtn">Trace</span>
+            </button>
+          </div>
+
+          <div class="arch-tabs" role="tablist" aria-label="Select backend system flow">
+            <button type="button" class="arch-tab is-active" role="tab" aria-selected="true"
+              data-flow="ecommerce">E-Commerce API</button>
+            <button type="button" class="arch-tab" role="tab" aria-selected="false" data-flow="ecommerceCms">E-Commerce
+              CMS</button>
+            <button type="button" class="arch-tab" role="tab" aria-selected="false" data-flow="pricing">Pricing
+              API</button>
+          </div>
+
+          <!-- Pipeline Diagram -->
+          <div class="arch-stage">
+            <div class="arch-endpoint-bar">
+              <span class="http-method" id="arch-method">POST</span>
+              <code class="http-route" id="arch-route">/api/v1/orders</code>
+              <span class="http-status" id="arch-status">201 CREATED</span>
+            </div>
+
+            <div class="pipeline" id="arch-pipeline">
+              <div class="pipeline-track" aria-hidden="true">
+                <div class="pipeline-progress" id="pipeline-progress"></div>
+              </div>
+
+              <div class="pipeline-node" data-step="0">
+                <span class="node-idx">01</span>
+                <span class="node-title" id="node-0-title">Go API</span>
+                <span class="node-meta" id="node-0-meta">Auth &amp; Order</span>
+              </div>
+
+              <div class="pipeline-node" data-step="1">
+                <span class="node-idx">02</span>
+                <span class="node-title" id="node-1-title">PostgreSQL</span>
+                <span class="node-meta" id="node-1-meta">ACID Commit</span>
+              </div>
+
+              <div class="pipeline-node" data-step="2">
+                <span class="node-idx">03</span>
+                <span class="node-title" id="node-2-title">Pay &amp; Ship</span>
+                <span class="node-meta" id="node-2-meta">3rd-Party API</span>
+              </div>
+
+              <div class="pipeline-node" data-step="3">
+                <span class="node-idx">04</span>
+                <span class="node-title" id="node-3-title">Firebase</span>
+                <span class="node-meta" id="node-3-meta">Push Notify</span>
+              </div>
+            </div>
+
+            <!-- Live Trace Log -->
+            <div class="arch-console" aria-live="polite">
+              <div class="console-header">
+                <span class="console-label" data-i18n="arch.traceLabel">EXECUTION TRACE</span>
+                <span class="console-runtime" id="arch-stack-tag">golang · postgresql · firebase</span>
+              </div>
+              <ol class="trace-list" id="trace-list">
+                <li class="trace-line is-done"><span class="trace-step">01</span><span class="trace-msg">go.router ->
+                    validated bearer token &amp; checkout payload</span></li>
+                <li class="trace-line is-done"><span class="trace-step">02</span><span class="trace-msg">postgres.tx ->
+                    committed order &amp; reserved stock atomically</span></li>
+                <li class="trace-line is-done"><span class="trace-step">03</span><span class="trace-msg">integrations
+                    -> synced payment gateway &amp; shipment booking</span></li>
+                <li class="trace-line is-done"><span class="trace-step">04</span><span class="trace-msg">firebase.fcm
+                    -> dispatched order confirmation push (201)</span></li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="arch-footer">
+            <span class="arch-footnote" data-i18n="arch.footnote">Simulated request flow illustrating backend layering</span>
+            <span class="arch-pulse-indicator" id="arch-state-indicator"><span class="mini-dot"
+                aria-hidden="true"></span><span id="arch-state-text">READY</span></span>
+          </div>
+        </aside>
       </div>
-      <div class="project-card">
-        <h3>Inventory Management System</h3>
-        <p>Built a website application for managing inventory and assets.</p>
-        <span class="tech">HTML | CSS | PHP | Laravel | MySQL | JavaScript</span>
-      </div>
-      <div class="project-card">
-        <h3>Content Management System</h3>
-        <p>Built a website application for managing company profile content.</p>
-        <span class="tech">HTML | CSS | PHP | Laravel | PostgreSQL | JavaScript</span>
-      </div>
-      <div class="project-card">
-        <h3>Lottery System</h3>
-        <p>Built a website application that can exchange coupon and spin lottery</p>
-        <span class="tech">HTML | CSS | PHP | Laravel | MySQL | JavaScript</span>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="contact" class="contact">
-    <h2>Get in Touch</h2>
-    <p>Have a project in mind or just want to say hi? Feel free to reach out!</p>
-    <a href="mailto:samuelalviaan@gmail.com" class="btn">
-      <i class="fas fa-envelope"></i> Send Email
-    </a>
-  </section>
+    <!-- 01 / About & Craft -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-grid">
+          <div class="section-aside reveal">
+            <span class="section-index" data-i18n="about.index">01 / ABOUT</span>
+            <h2 class="section-heading" data-i18n-html="about.heading">Systems first,<br>details intact.</h2>
+          </div>
 
-  <footer>
-    <p>&copy; 2025 | Samuel Alvian Maryono. All rights reserved.</p>
-    <div class="social-links">
-      <a href="https://instagram.com/samuelalviaan" target="_blank">
-        <i class="fab fa-instagram"></i> Instagram
-      </a>
-      <a href="https://github.com/kieuro" target="_blank">
-        <i class="fab fa-github"></i> GitHub
-      </a>
+          <div class="section-body">
+            <div class="about-prose reveal" style="--stagger: 60ms">
+              <p class="prose-lead" data-i18n="about.lead">
+                I'm Samuel Alvian Maryono — a backend developer focused on crafting dependable APIs, well-modeled
+                databases, and server-side architecture that stays readable as products grow.
+              </p>
+              <p class="prose-body" data-i18n-html="about.body">
+                My day-to-day work centers on <strong>Golang</strong> for lean, high-concurrency REST services and
+                <strong>PHP with Laravel</strong> for full-featured business applications — backed by
+                <strong>PostgreSQL</strong>, <strong>MySQL</strong>, <strong>Firebase</strong> and
+                <strong>Redis</strong> caching, containerized
+                with <strong>Docker</strong>, and served reliably behind <strong>Nginx</strong> on Linux VPS
+                infrastructure.
+              </p>
+            </div>
+
+            <div class="principles-grid">
+              <article class="principle-card reveal" style="--stagger: 80ms">
+                <span class="principle-num">01</span>
+                <h3 class="principle-title" data-i18n="about.p1Title">Predictable API Contracts</h3>
+                <p class="principle-desc" data-i18n="about.p1Desc">Clear endpoint conventions, strict request validation, and consistent error
+                  envelopes so frontend and external integrations remain effortless.</p>
+              </article>
+
+              <article class="principle-card reveal" style="--stagger: 140ms">
+                <span class="principle-num">02</span>
+                <h3 class="principle-title" data-i18n="about.p2Title">Relational Data Integrity</h3>
+                <p class="principle-desc" data-i18n="about.p2Desc">Normalized schemas, atomic SQL transactions, and intentional indexing across
+                  PostgreSQL and MySQL to protect business-critical state.</p>
+              </article>
+
+              <article class="principle-card reveal" style="--stagger: 200ms">
+                <span class="principle-num">03</span>
+                <h3 class="principle-title" data-i18n="about.p3Title">Production-Ready Delivery</h3>
+                <p class="principle-desc" data-i18n="about.p3Desc">Reproducible Docker environments, tuned Nginx reverse proxying, and
+                  disciplined Git workflows built for real VPS deployments.</p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 / Core Stack -->
+    <section id="stack" class="section">
+      <div class="container">
+        <div class="section-grid">
+          <div class="section-aside reveal">
+            <span class="section-index" data-i18n="stack.index">02 / STACK</span>
+            <h2 class="section-heading" data-i18n-html="stack.heading">Tools I build<br>&amp; ship with.</h2>
+            <p class="section-subcopy" data-i18n="stack.subcopy">Focused, battle-tested technologies chosen for clarity, performance, and
+              long-term maintainability.</p>
+          </div>
+
+          <div class="section-body">
+            <div class="stack-matrix">
+              <div class="stack-group reveal" style="--stagger: 60ms">
+                <div class="stack-group-header">
+                  <span class="stack-cat-code">A</span>
+                  <h3 class="stack-cat-title" data-i18n="stack.catA">Languages &amp; Frameworks</h3>
+                </div>
+                <div class="stack-items">
+                  <div class="stack-item">
+                    <span class="stack-name">Golang</span>
+                    <span class="stack-role" data-i18n="stack.golang">REST APIs &amp; concurrent backend services</span>
+                  </div>
+                  <div class="stack-item">
+                    <span class="stack-name">PHP</span>
+                    <span class="stack-role" data-i18n="stack.php">Server-side web logic &amp; business systems</span>
+                  </div>
+                  <div class="stack-item">
+                    <span class="stack-name">Laravel</span>
+                    <span class="stack-role" data-i18n="stack.laravel">Full-stack MVC apps, Eloquent ORM &amp; auth</span>
+                  </div>
+                  <div class="stack-item">
+                    <span class="stack-name">JavaScript</span>
+                    <span class="stack-role" data-i18n="stack.js">Interactive web interfaces &amp; async flows</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="stack-group reveal" style="--stagger: 120ms">
+                <div class="stack-group-header">
+                  <span class="stack-cat-code">B</span>
+                  <h3 class="stack-cat-title" data-i18n="stack.catB">Databases &amp; Caching</h3>
+                </div>
+                <div class="stack-items">
+                  <div class="stack-item">
+                    <span class="stack-name">PostgreSQL</span>
+                    <span class="stack-role" data-i18n="stack.postgres">Relational modeling, transactions &amp; indexing</span>
+                  </div>
+                  <div class="stack-item">
+                    <span class="stack-name">MySQL</span>
+                    <span class="stack-role" data-i18n="stack.mysql">Structured transactional storage for web apps</span>
+                  </div>
+                  <div class="stack-item">
+                    <span class="stack-name">Firebase</span>
+                    <span class="stack-role" data-i18n="stack.firebase">Push notifications (FCM), NoSQL, real-time data &amp; auth</span>
+                  </div>
+                  <div class="stack-item">
+                    <span class="stack-name">Redis</span>
+                    <span class="stack-role" data-i18n="stack.redis">In-memory caching for low-latency catalog &amp; API reads</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="stack-group reveal" style="--stagger: 180ms">
+                <div class="stack-group-header">
+                  <span class="stack-cat-code">C</span>
+                  <h3 class="stack-cat-title" data-i18n="stack.catC">Infrastructure &amp; Workflow</h3>
+                </div>
+                <div class="stack-items">
+                  <div class="stack-item">
+                    <span class="stack-name">Docker</span>
+                    <span class="stack-role" data-i18n="stack.docker">Containerized local parity &amp; deployments</span>
+                  </div>
+                  <div class="stack-item">
+                    <span class="stack-name">Nginx</span>
+                    <span class="stack-role" data-i18n="stack.nginx">Reverse proxy, routing &amp; VPS web serving</span>
+                  </div>
+                  <div class="stack-item">
+                    <span class="stack-name">Linux VPS</span>
+                    <span class="stack-role" data-i18n="stack.vps">Server provisioning, tuning &amp; production hosting</span>
+                  </div>
+                  <div class="stack-item">
+                    <span class="stack-name">Git</span>
+                    <span class="stack-role" data-i18n="stack.git">Version control &amp; collaborative delivery</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 / Selected Work -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="projects-header reveal">
+          <div>
+            <span class="section-index" data-i18n="projects.index">03 / SELECTED WORK</span>
+            <h2 class="section-heading" data-i18n-html="projects.heading">Built for real<br>operational workflows.</h2>
+          </div>
+
+          <div class="filter-bar" role="tablist" aria-label="Filter projects by discipline">
+            <div class="filter-indicator" id="filter-indicator" aria-hidden="true"></div>
+            <button type="button" class="filter-btn is-active" role="tab" aria-selected="true" data-filter="all"><span data-i18n="projects.filterAll">All</span> <span class="filter-count">6</span></button>
+            <button type="button" class="filter-btn" role="tab" aria-selected="false" data-filter="api"><span data-i18n="projects.filterApi">API &amp; Integrations</span> <span class="filter-count">3</span></button>
+            <button type="button" class="filter-btn" role="tab" aria-selected="false" data-filter="web"><span data-i18n="projects.filterWeb">Web Platforms</span> <span class="filter-count">3</span></button>
+          </div>
+        </div>
+
+        <div class="project-grid" id="project-grid">
+          <!-- Project 01 -->
+          <article class="project-card reveal" data-category="api" data-project="ecommerce" style="--stagger: 40ms">
+            <div class="project-card-top">
+              <span class="project-num">01</span>
+              <span class="project-type" data-i18n="proj.ecommerce.type">REST API · BACKEND</span>
+            </div>
+
+            <div class="project-card-body">
+              <h3 class="project-title" data-i18n="proj.ecommerce.title">E-Commerce Backend</h3>
+              <p class="project-desc" data-i18n="proj.ecommerce.desc">
+                Modular Go backend powering catalogs, checkout, and order fulfillment — integrated with Payment Gateway
+                and Shipment Service APIs plus Firebase push notifications for real-time order updates.
+              </p>
+            </div>
+
+            <div class="project-card-footer">
+              <ul class="tech-list" aria-label="Technologies used">
+                <li>Golang</li>
+                <li>PostgreSQL</li>
+                <li>MySQL</li>
+                <li>Firebase</li>
+                <li>Payment Gateway</li>
+                <li>Shipment API</li>
+              </ul>
+              <button type="button" class="project-inspect-btn" data-open-project="ecommerce"
+                aria-label="Inspect architecture details for E-Commerce Backend">
+                <span data-i18n="projects.inspect">Inspect</span>
+                <svg class="icon-diag" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M7 17L17 7M7 7h10v10" />
+                </svg>
+              </button>
+            </div>
+          </article>
+
+          <!-- Project 02 -->
+          <article class="project-card reveal" data-category="api" data-project="ecommerceCms" style="--stagger: 80ms">
+            <div class="project-card-top">
+              <span class="project-num">02</span>
+              <span class="project-type" data-i18n="proj.ecommerceCms.type">COMMERCE CMS · INTEGRATIONS</span>
+            </div>
+
+            <div class="project-card-body">
+              <h3 class="project-title" data-i18n="proj.ecommerceCms.title">E-Commerce CMS</h3>
+              <p class="project-desc" data-i18n="proj.ecommerceCms.desc">
+                Storefront and operations CMS built with Laravel and PostgreSQL, pairing Redis caching with third-party
+                Payment Gateway and Shipment Service integrations for end-to-end fulfillment.
+              </p>
+            </div>
+
+            <div class="project-card-footer">
+              <ul class="tech-list" aria-label="Technologies used">
+                <li>Laravel</li>
+                <li>PostgreSQL</li>
+                <li>Redis</li>
+                <li>Payment Gateway</li>
+                <li>Shipment API</li>
+              </ul>
+              <button type="button" class="project-inspect-btn" data-open-project="ecommerceCms"
+                aria-label="Inspect architecture details for E-Commerce CMS">
+                <span data-i18n="projects.inspect">Inspect</span>
+                <svg class="icon-diag" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M7 17L17 7M7 7h10v10" />
+                </svg>
+              </button>
+            </div>
+          </article>
+
+          <!-- Project 03 -->
+          <article class="project-card reveal" data-category="api" data-project="pricing" style="--stagger: 120ms">
+            <div class="project-card-top">
+              <span class="project-num">03</span>
+              <span class="project-type" data-i18n="proj.pricing.type">ADMIN DASHBOARD · REST API</span>
+            </div>
+
+            <div class="project-card-body">
+              <h3 class="project-title" data-i18n="proj.pricing.title">Pricing Management App</h3>
+              <p class="project-desc" data-i18n="proj.pricing.desc">
+                Centralized pricing platform built with Laravel and PostgreSQL, combining a structured admin dashboard
+                for managing pricing rules with a clean REST API consumed by client applications.
+              </p>
+            </div>
+
+            <div class="project-card-footer">
+              <ul class="tech-list" aria-label="Technologies used">
+                <li>Laravel</li>
+                <li>PostgreSQL</li>
+                <li>REST API</li>
+                <li>Admin Dashboard</li>
+              </ul>
+              <button type="button" class="project-inspect-btn" data-open-project="pricing"
+                aria-label="Inspect architecture details for Pricing Management App">
+                <span data-i18n="projects.inspect">Inspect</span>
+                <svg class="icon-diag" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M7 17L17 7M7 7h10v10" />
+                </svg>
+              </button>
+            </div>
+          </article>
+
+          <!-- Project 04 -->
+          <article class="project-card reveal" data-category="web" data-project="inventory" style="--stagger: 160ms">
+            <div class="project-card-top">
+              <span class="project-num">04</span>
+              <span class="project-type" data-i18n="proj.inventory.type">FULL-STACK · OPERATIONS</span>
+            </div>
+
+            <div class="project-card-body">
+              <h3 class="project-title" data-i18n="proj.inventory.title">Inventory Management System</h3>
+              <p class="project-desc" data-i18n="proj.inventory.desc">
+                Web-based inventory and asset tracking platform designed to centralize stock records, monitor asset
+                lifecycles, and reduce manual spreadsheet errors across daily operations.
+              </p>
+            </div>
+
+            <div class="project-card-footer">
+              <ul class="tech-list" aria-label="Technologies used">
+                <li>PHP</li>
+                <li>Laravel</li>
+                <li>MySQL</li>
+                <li>JavaScript</li>
+                <li>HTML / CSS</li>
+              </ul>
+              <button type="button" class="project-inspect-btn" data-open-project="inventory"
+                aria-label="Inspect architecture details for Inventory Management System">
+                <span data-i18n="projects.inspect">Inspect</span>
+                <svg class="icon-diag" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M7 17L17 7M7 7h10v10" />
+                </svg>
+              </button>
+            </div>
+          </article>
+
+          <!-- Project 05 -->
+          <article class="project-card reveal" data-category="web" data-project="cms" style="--stagger: 200ms">
+            <div class="project-card-top">
+              <span class="project-num">05</span>
+              <span class="project-type" data-i18n="proj.cms.type">FULL-STACK · PLATFORM</span>
+            </div>
+
+            <div class="project-card-body">
+              <h3 class="project-title" data-i18n="proj.cms.title">Company Profile CMS</h3>
+              <p class="project-desc" data-i18n="proj.cms.desc">
+                Custom company profile CMS enabling teams to author, structure, and publish site pages and brand content
+                directly from an intuitive administrative dashboard.
+              </p>
+            </div>
+
+            <div class="project-card-footer">
+              <ul class="tech-list" aria-label="Technologies used">
+                <li>PHP</li>
+                <li>Laravel</li>
+                <li>PostgreSQL</li>
+                <li>JavaScript</li>
+                <li>HTML / CSS</li>
+              </ul>
+              <button type="button" class="project-inspect-btn" data-open-project="cms"
+                aria-label="Inspect architecture details for Company Profile CMS">
+                <span data-i18n="projects.inspect">Inspect</span>
+                <svg class="icon-diag" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M7 17L17 7M7 7h10v10" />
+                </svg>
+              </button>
+            </div>
+          </article>
+
+          <!-- Project 06 -->
+          <article class="project-card reveal" data-category="web" data-project="lottery" style="--stagger: 240ms">
+            <div class="project-card-top">
+              <span class="project-num">06</span>
+              <span class="project-type" data-i18n="proj.lottery.type">FULL-STACK · PROMOTIONAL ENGINE</span>
+            </div>
+
+            <div class="project-card-body">
+              <h3 class="project-title" data-i18n="proj.lottery.title">Coupon &amp; Lottery System</h3>
+              <p class="project-desc" data-i18n="proj.lottery.desc">
+                Interactive promotional web application where participants exchange coupon codes and spin a digital
+                lottery draw, backed by server-side redemption validation and prize tracking.
+              </p>
+            </div>
+
+            <div class="project-card-footer">
+              <ul class="tech-list" aria-label="Technologies used">
+                <li>PHP</li>
+                <li>Laravel</li>
+                <li>MySQL</li>
+                <li>JavaScript</li>
+                <li>HTML / CSS</li>
+              </ul>
+              <button type="button" class="project-inspect-btn" data-open-project="lottery"
+                aria-label="Inspect architecture details for Coupon and Lottery System">
+                <span data-i18n="projects.inspect">Inspect</span>
+                <svg class="icon-diag" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M7 17L17 7M7 7h10v10" />
+                </svg>
+              </button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 / Contact Section -->
+    <section id="contact" class="section section-contact">
+      <div class="container">
+        <div class="contact-panel reveal">
+          <div class="contact-left">
+            <span class="section-index" data-i18n="contact.index">04 / CONTACT</span>
+            <h2 class="contact-heading" data-i18n="contact.heading">Have a system to build or a role to discuss?</h2>
+            <p class="contact-lead" data-i18n="contact.lead">
+              Whether you need a reliable Go API, a custom Laravel web application, or a backend developer to join your
+              team — feel free to reach out directly.
+            </p>
+          </div>
+
+          <div class="contact-right">
+            <div class="email-box">
+              <span class="email-caption" data-i18n="contact.emailCaption">DIRECT EMAIL</span>
+              <a href="mailto:samuelalviaan@gmail.com" class="email-address">samuelalviaan@gmail.com</a>
+              <div class="contact-actions">
+                <a href="mailto:samuelalviaan@gmail.com" class="btn btn-primary">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="2" y="4" width="20" height="16" rx="2" />
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                  </svg>
+                  <span data-i18n="contact.sendEmail">Send Email</span>
+                </a>
+                <button type="button" class="btn btn-secondary" id="copy-email-btn"
+                  data-email="samuelalviaan@gmail.com">
+                  <svg class="copy-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="9" y="9" width="13" height="13" rx="2" />
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+                  </svg>
+                  <svg class="check-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                    stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M20 6L9 17l-5-5" />
+                  </svg>
+                  <span id="copy-email-label" data-i18n="contact.copyAddress">Copy Address</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="channel-list">
+              <a href="https://github.com/kieuro" target="_blank" rel="noopener noreferrer" class="channel-row">
+                <span class="channel-meta">
+                  <span class="channel-name">GitHub</span>
+                  <span class="channel-handle">@kieuro</span>
+                </span>
+                <svg class="icon-diag" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M7 17L17 7M7 7h10v10" />
+                </svg>
+              </a>
+              <a href="https://instagram.com/samuelalviaan" target="_blank" rel="noopener noreferrer"
+                class="channel-row">
+                <span class="channel-meta">
+                  <span class="channel-name">Instagram</span>
+                  <span class="channel-handle">@samuelalviaan</span>
+                </span>
+                <svg class="icon-diag" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M7 17L17 7M7 7h10v10" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-copy">&copy; <span id="current-year">2026</span> Samuel Alvian Maryono. <span data-i18n="footer.rights">All rights reserved.</span></p>
+      <div class="footer-right">
+        <span class="footer-note" data-i18n="footer.note">Designed in Swiss Minimalist grid · Semantic HTML/CSS/JS</span>
+        <a href="#top" class="footer-top-link">
+          <span data-i18n="footer.top">Top</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 19V5M5 12l7-7 7 7" />
+          </svg>
+        </a>
+      </div>
     </div>
   </footer>
 
+  <!-- Floating Scroll to Top Button -->
+  <button type="button" id="scroll-to-top" class="scroll-to-top" aria-label="Scroll back to top" data-i18n-aria="aria.scrollTop">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+      stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M12 19V5M5 12l7-7 7 7" />
+    </svg>
+  </button>
+
+  <!-- Project Detail Slide-Over Modal -->
+  <div class="modal-backdrop" id="project-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"
+    aria-hidden="true">
+    <div class="modal-drawer" tabindex="-1">
+      <div class="modal-header">
+        <div class="modal-meta-top">
+          <span class="project-num" id="modal-index">01</span>
+          <span class="project-type" id="modal-category">REST API · BACKEND</span>
+        </div>
+        <button type="button" class="modal-close" id="modal-close" aria-label="Close project details" data-i18n-aria="aria.closeModal">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 6L6 18M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="modal-content">
+        <h2 class="modal-title" id="modal-title">E-Commerce Backend</h2>
+        <p class="modal-summary" id="modal-summary"></p>
+
+        <div class="modal-block">
+          <h3 class="modal-block-label" data-i18n="modal.flowLabel">REQUEST FLOW</h3>
+          <div class="modal-flow" id="modal-flow"></div>
+        </div>
+
+        <div class="modal-block">
+          <h3 class="modal-block-label" data-i18n="modal.focusLabel">ENGINEERING FOCUS</h3>
+          <ul class="modal-highlights" id="modal-highlights"></ul>
+        </div>
+
+        <div class="modal-block">
+          <h3 class="modal-block-label" data-i18n="modal.stackLabel">TECHNOLOGY STACK</h3>
+          <ul class="tech-list" id="modal-tech"></ul>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary modal-nav-btn" id="modal-prev">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M19 12H5M12 19l-7-7 7-7" />
+          </svg>
+          <span data-i18n="modal.prev">Previous</span>
+        </button>
+        <button type="button" class="btn btn-secondary modal-nav-btn" id="modal-next">
+          <span data-i18n="modal.next">Next Project</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+      stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M20 6L9 17l-5-5" />
+    </svg>
+    <span id="toast-message">Email copied to clipboard</span>
+  </div>
+
   <script src="scripts/script.js"></script>
 </body>
+
 </html>
