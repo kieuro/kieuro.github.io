@@ -1,0 +1,4 @@
+Contact: mailto:samuelalviaan@gmail.com
+Expires: 2029-11-26T00:00:00.000Z
+Preferred-Languages: en, id
+Canonical: https://kieuro.github.io/.well-known/security.txt

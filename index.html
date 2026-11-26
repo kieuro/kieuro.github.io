@@ -4,6 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy"
+    content="default-src 'none'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests;">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="description"
     content="Samuel Alvian Maryono — Backend Developer building reliable APIs, relational data systems, and web applications with Go, PHP, Laravel, PostgreSQL, and MySQL.">
   <meta name="author" content="Samuel Alvian Maryono">
@@ -16,30 +19,12 @@
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico" sizes="32x32">
   <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com" referrerpolicy="no-referrer">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin referrerpolicy="no-referrer">
   <link
     href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
-    rel="stylesheet">
-  <script>
-    // Prevent flash of wrong theme/language and enable progressive reveal animations
-    (function () {
-      document.documentElement.classList.add('js-ready');
-      var savedTheme = null;
-      var savedLang = null;
-      try {
-        savedTheme = localStorage.getItem('theme');
-        savedLang = localStorage.getItem('lang');
-      } catch (e) { }
-      var theme = savedTheme === 'dark' ? 'dark' : 'light';
-      var lang = savedLang === 'id' ? 'id' : 'en';
-      document.documentElement.setAttribute('data-theme', theme);
-      document.documentElement.setAttribute('data-lang', lang);
-      document.documentElement.setAttribute('lang', lang);
-      var meta = document.querySelector('meta[name="theme-color"]');
-      if (meta) meta.setAttribute('content', theme === 'dark' ? '#0E1013' : '#F7F6F2');
-    })();
-  </script>
+    rel="stylesheet" referrerpolicy="no-referrer">
+  <script src="scripts/boot.js"></script>
   <link rel="stylesheet" href="styles/style.css">
 </head>
 
@@ -121,7 +106,8 @@
         <li><a href="#contact" class="mobile-nav-link"><span class="mono-idx">04</span><span data-i18n="mobile.contact">Contact</span></a></li>
       </ul>
       <div class="mobile-drawer-footer">
-        <a href="mailto:samuelalviaan@gmail.com" class="mobile-email">samuelalviaan@gmail.com</a>
+        <a href="#contact" class="mobile-email" data-email-link data-email-user="samuelalviaan"
+          data-email-domain="gmail.com">samuelalviaan [at] gmail [dot] com</a>
         <div class="mobile-socials">
           <a href="https://github.com/kieuro" target="_blank" rel="noopener noreferrer">GitHub</a>
           <a href="https://instagram.com/samuelalviaan" target="_blank" rel="noopener noreferrer">Instagram</a>
@@ -135,22 +121,22 @@
     <section id="home" class="hero">
       <div class="container hero-grid">
         <div class="hero-content">
-          <div class="hero-eyebrow hero-animate" style="--delay: 0ms">
+          <div class="hero-eyebrow hero-animate" data-delay="0">
             <span class="status-dot" aria-hidden="true"></span>
             <span class="mono-label" data-i18n="hero.eyebrow">00 / SAMUEL ALVIAN MARYONO — BACKEND DEVELOPER</span>
           </div>
 
-          <h1 class="hero-title hero-animate" style="--delay: 70ms" data-i18n-html="hero.title">
+          <h1 class="hero-title hero-animate" data-delay="70" data-i18n-html="hero.title">
             Reliable backends, engineered for <span class="title-accent">clarity &amp; scale.</span>
           </h1>
 
-          <p class="hero-lead hero-animate" style="--delay: 140ms" data-i18n-html="hero.lead">
+          <p class="hero-lead hero-animate" data-delay="140" data-i18n-html="hero.lead">
             I design and build structured APIs, relational data layers, and production web applications using
             <strong>Golang</strong>, <strong>PHP &amp; Laravel</strong>, and Linux server infrastructure — turning
             complex business rules into fast, maintainable systems.
           </p>
 
-          <div class="hero-actions hero-animate" style="--delay: 210ms">
+          <div class="hero-actions hero-animate" data-delay="210">
             <a href="#projects" class="btn btn-primary">
               <span data-i18n="hero.ctaWork">Explore Selected Work</span>
               <svg class="icon-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -171,7 +157,7 @@
             </a>
           </div>
 
-          <dl class="hero-specs hero-animate" style="--delay: 280ms">
+          <dl class="hero-specs hero-animate" data-delay="280">
             <div class="spec-item">
               <dt data-i18n="hero.specRuntime">Core Runtime</dt>
               <dd>Golang · PHP / Laravel</dd>
@@ -188,7 +174,7 @@
         </div>
 
         <!-- Interactive Backend Architecture Card -->
-        <aside class="arch-card hero-animate" style="--delay: 180ms"
+        <aside class="arch-card hero-animate" data-delay="180"
           aria-label="Interactive backend request flow preview">
           <div class="arch-header">
             <div class="arch-title-group">
@@ -289,7 +275,7 @@
           </div>
 
           <div class="section-body">
-            <div class="about-prose reveal" style="--stagger: 60ms">
+            <div class="about-prose reveal" data-stagger="60">
               <p class="prose-lead" data-i18n="about.lead">
                 I'm Samuel Alvian Maryono — a backend developer focused on crafting dependable APIs, well-modeled
                 databases, and server-side architecture that stays readable as products grow.
@@ -305,21 +291,21 @@
             </div>
 
             <div class="principles-grid">
-              <article class="principle-card reveal" style="--stagger: 80ms">
+              <article class="principle-card reveal" data-stagger="80">
                 <span class="principle-num">01</span>
                 <h3 class="principle-title" data-i18n="about.p1Title">Predictable API Contracts</h3>
                 <p class="principle-desc" data-i18n="about.p1Desc">Clear endpoint conventions, strict request validation, and consistent error
                   envelopes so frontend and external integrations remain effortless.</p>
               </article>
 
-              <article class="principle-card reveal" style="--stagger: 140ms">
+              <article class="principle-card reveal" data-stagger="140">
                 <span class="principle-num">02</span>
                 <h3 class="principle-title" data-i18n="about.p2Title">Relational Data Integrity</h3>
                 <p class="principle-desc" data-i18n="about.p2Desc">Normalized schemas, atomic SQL transactions, and intentional indexing across
                   PostgreSQL and MySQL to protect business-critical state.</p>
               </article>
 
-              <article class="principle-card reveal" style="--stagger: 200ms">
+              <article class="principle-card reveal" data-stagger="200">
                 <span class="principle-num">03</span>
                 <h3 class="principle-title" data-i18n="about.p3Title">Production-Ready Delivery</h3>
                 <p class="principle-desc" data-i18n="about.p3Desc">Reproducible Docker environments, tuned Nginx reverse proxying, and
@@ -344,7 +330,7 @@
 
           <div class="section-body">
             <div class="stack-matrix">
-              <div class="stack-group reveal" style="--stagger: 60ms">
+              <div class="stack-group reveal" data-stagger="60">
                 <div class="stack-group-header">
                   <span class="stack-cat-code">A</span>
                   <h3 class="stack-cat-title" data-i18n="stack.catA">Languages &amp; Frameworks</h3>
@@ -369,7 +355,7 @@
                 </div>
               </div>
 
-              <div class="stack-group reveal" style="--stagger: 120ms">
+              <div class="stack-group reveal" data-stagger="120">
                 <div class="stack-group-header">
                   <span class="stack-cat-code">B</span>
                   <h3 class="stack-cat-title" data-i18n="stack.catB">Databases &amp; Caching</h3>
@@ -394,7 +380,7 @@
                 </div>
               </div>
 
-              <div class="stack-group reveal" style="--stagger: 180ms">
+              <div class="stack-group reveal" data-stagger="180">
                 <div class="stack-group-header">
                   <span class="stack-cat-code">C</span>
                   <h3 class="stack-cat-title" data-i18n="stack.catC">Infrastructure &amp; Workflow</h3>
@@ -443,7 +429,7 @@
 
         <div class="project-grid" id="project-grid">
           <!-- Project 01 -->
-          <article class="project-card reveal" data-category="api" data-project="ecommerce" style="--stagger: 40ms">
+          <article class="project-card reveal" data-category="api" data-project="ecommerce" data-stagger="40">
             <div class="project-card-top">
               <span class="project-num">01</span>
               <span class="project-type" data-i18n="proj.ecommerce.type">REST API · BACKEND</span>
@@ -478,7 +464,7 @@
           </article>
 
           <!-- Project 02 -->
-          <article class="project-card reveal" data-category="api" data-project="ecommerceCms" style="--stagger: 80ms">
+          <article class="project-card reveal" data-category="api" data-project="ecommerceCms" data-stagger="80">
             <div class="project-card-top">
               <span class="project-num">02</span>
               <span class="project-type" data-i18n="proj.ecommerceCms.type">COMMERCE CMS · INTEGRATIONS</span>
@@ -512,7 +498,7 @@
           </article>
 
           <!-- Project 03 -->
-          <article class="project-card reveal" data-category="api" data-project="pricing" style="--stagger: 120ms">
+          <article class="project-card reveal" data-category="api" data-project="pricing" data-stagger="120">
             <div class="project-card-top">
               <span class="project-num">03</span>
               <span class="project-type" data-i18n="proj.pricing.type">ADMIN DASHBOARD · REST API</span>
@@ -545,7 +531,7 @@
           </article>
 
           <!-- Project 04 -->
-          <article class="project-card reveal" data-category="web" data-project="inventory" style="--stagger: 160ms">
+          <article class="project-card reveal" data-category="web" data-project="inventory" data-stagger="160">
             <div class="project-card-top">
               <span class="project-num">04</span>
               <span class="project-type" data-i18n="proj.inventory.type">FULL-STACK · OPERATIONS</span>
@@ -579,7 +565,7 @@
           </article>
 
           <!-- Project 05 -->
-          <article class="project-card reveal" data-category="web" data-project="cms" style="--stagger: 200ms">
+          <article class="project-card reveal" data-category="web" data-project="cms" data-stagger="200">
             <div class="project-card-top">
               <span class="project-num">05</span>
               <span class="project-type" data-i18n="proj.cms.type">FULL-STACK · PLATFORM</span>
@@ -613,7 +599,7 @@
           </article>
 
           <!-- Project 06 -->
-          <article class="project-card reveal" data-category="web" data-project="lottery" style="--stagger: 240ms">
+          <article class="project-card reveal" data-category="web" data-project="lottery" data-stagger="240">
             <div class="project-card-top">
               <span class="project-num">06</span>
               <span class="project-type" data-i18n="proj.lottery.type">FULL-STACK · PROMOTIONAL ENGINE</span>
@@ -665,9 +651,11 @@
           <div class="contact-right">
             <div class="email-box">
               <span class="email-caption" data-i18n="contact.emailCaption">DIRECT EMAIL</span>
-              <a href="mailto:samuelalviaan@gmail.com" class="email-address">samuelalviaan@gmail.com</a>
+              <a href="#contact" class="email-address" data-email-link data-email-user="samuelalviaan"
+                data-email-domain="gmail.com">samuelalviaan [at] gmail [dot] com</a>
               <div class="contact-actions">
-                <a href="mailto:samuelalviaan@gmail.com" class="btn btn-primary">
+                <a href="#contact" class="btn btn-primary" data-email-link="href-only" data-email-user="samuelalviaan"
+                  data-email-domain="gmail.com">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                     stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <rect x="2" y="4" width="20" height="16" rx="2" />
@@ -676,7 +664,7 @@
                   <span data-i18n="contact.sendEmail">Send Email</span>
                 </a>
                 <button type="button" class="btn btn-secondary" id="copy-email-btn"
-                  data-email="samuelalviaan@gmail.com">
+                  data-email-user="samuelalviaan" data-email-domain="gmail.com">
                   <svg class="copy-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                     <rect x="9" y="9" width="13" height="13" rx="2" />
@@ -810,7 +798,7 @@
     <span id="toast-message">Email copied to clipboard</span>
   </div>
 
-  <script src="scripts/script.js"></script>
+  <script src="scripts/script.js" defer></script>
 </body>
 
 </html>

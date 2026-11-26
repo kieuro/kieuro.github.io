@@ -4,9 +4,6 @@
   const prefersReducedMotion = () =>
     window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  /* ========================================================================
-     Bilingual Dictionary (English & Bahasa Indonesia)
-     ======================================================================== */
   const I18N = {
     en: {
       meta: {
@@ -39,9 +36,17 @@
       },
       hero: {
         eyebrow: '00 / SAMUEL ALVIAN MARYONO — BACKEND DEVELOPER',
-        title: 'Reliable backends, engineered for <span class="title-accent">clarity &amp; scale.</span>',
-        lead:
-          'I design and build structured APIs, relational data layers, and production web applications using <strong>Golang</strong>, <strong>PHP &amp; Laravel</strong>, and Linux server infrastructure — turning complex business rules into fast, maintainable systems.',
+        title: [
+          'Reliable backends, engineered for ',
+          { tag: 'span', className: 'title-accent', text: 'clarity & scale.' }
+        ],
+        lead: [
+          'I design and build structured APIs, relational data layers, and production web applications using ',
+          { tag: 'strong', text: 'Golang' },
+          ', ',
+          { tag: 'strong', text: 'PHP & Laravel' },
+          ', and Linux server infrastructure — turning complex business rules into fast, maintainable systems.'
+        ],
         ctaWork: 'Explore Selected Work',
         ctaContact: 'Get in Touch',
         specRuntime: 'Core Runtime',
@@ -59,11 +64,28 @@
       },
       about: {
         index: '01 / ABOUT',
-        heading: 'Systems first,<br>details intact.',
+        heading: ['Systems first,', { tag: 'br' }, 'details intact.'],
         lead:
           "I'm Samuel Alvian Maryono — a backend developer focused on crafting dependable APIs, well-modeled databases, and server-side architecture that stays readable as products grow.",
-        body:
-          'My day-to-day work centers on <strong>Golang</strong> for lean, high-concurrency REST services and <strong>PHP with Laravel</strong> for full-featured business applications — backed by <strong>PostgreSQL</strong>, <strong>MySQL</strong>, <strong>Firebase</strong> and <strong>Redis</strong> caching, containerized with <strong>Docker</strong>, and served reliably behind <strong>Nginx</strong> on Linux VPS infrastructure.',
+        body: [
+          'My day-to-day work centers on ',
+          { tag: 'strong', text: 'Golang' },
+          ' for lean, high-concurrency REST services and ',
+          { tag: 'strong', text: 'PHP with Laravel' },
+          ' for full-featured business applications — backed by ',
+          { tag: 'strong', text: 'PostgreSQL' },
+          ', ',
+          { tag: 'strong', text: 'MySQL' },
+          ', ',
+          { tag: 'strong', text: 'Firebase' },
+          ' and ',
+          { tag: 'strong', text: 'Redis' },
+          ' caching, containerized with ',
+          { tag: 'strong', text: 'Docker' },
+          ', and served reliably behind ',
+          { tag: 'strong', text: 'Nginx' },
+          ' on Linux VPS infrastructure.'
+        ],
         p1Title: 'Predictable API Contracts',
         p1Desc:
           'Clear endpoint conventions, strict request validation, and consistent error envelopes so frontend and external integrations remain effortless.',
@@ -76,7 +98,7 @@
       },
       stack: {
         index: '02 / STACK',
-        heading: 'Tools I build<br>&amp; ship with.',
+        heading: ['Tools I build', { tag: 'br' }, '& ship with.'],
         subcopy: 'Focused, battle-tested technologies chosen for clarity, performance, and long-term maintainability.',
         catA: 'Languages & Frameworks',
         catB: 'Databases & Caching',
@@ -96,7 +118,7 @@
       },
       projects: {
         index: '03 / SELECTED WORK',
-        heading: 'Built for real<br>operational workflows.',
+        heading: ['Built for real', { tag: 'br' }, 'operational workflows.'],
         filterAll: 'All',
         filterApi: 'API & Integrations',
         filterWeb: 'Web Platforms',
@@ -201,9 +223,17 @@
       },
       hero: {
         eyebrow: '00 / SAMUEL ALVIAN MARYONO — PENGEMBANG BACKEND',
-        title: 'Sistem backend yang andal, dirancang <span class="title-accent">rapi &amp; siap berkembang.</span>',
-        lead:
-          'Saya merancang dan membangun sistem di balik layar, pengelolaan data, serta aplikasi web bisnis menggunakan <strong>Golang</strong>, <strong>PHP &amp; Laravel</strong>, dan server Linux — membantu mengubah kebutuhan bisnis menjadi aplikasi yang cepat, aman, dan mudah dikelola.',
+        title: [
+          'Sistem backend yang andal, dirancang ',
+          { tag: 'span', className: 'title-accent', text: 'rapi & siap berkembang.' }
+        ],
+        lead: [
+          'Saya merancang dan membangun sistem di balik layar, pengelolaan data, serta aplikasi web bisnis menggunakan ',
+          { tag: 'strong', text: 'Golang' },
+          ', ',
+          { tag: 'strong', text: 'PHP & Laravel' },
+          ', dan server Linux — membantu mengubah kebutuhan bisnis menjadi aplikasi yang cepat, aman, dan mudah dikelola.'
+        ],
         ctaWork: 'Lihat Daftar Proyek',
         ctaContact: 'Hubungi Saya',
         specRuntime: 'Bahasa & Kerangka Kerja',
@@ -221,11 +251,28 @@
       },
       about: {
         index: '01 / TENTANG SAYA',
-        heading: 'Sistem yang kuat,<br>pengelolaan yang mudah.',
+        heading: ['Sistem yang kuat,', { tag: 'br' }, 'pengelolaan yang mudah.'],
         lead:
           'Saya Samuel Alvian Maryono — pengembang backend yang berfokus membangun sistem di balik layar agar aplikasi web dan bisnis berjalan stabil, aman, dan mudah dikembangkan di masa depan.',
-        body:
-          'Sehari-hari saya membangun sistem pengolahan data menggunakan <strong>Golang</strong> serta aplikasi web bisnis menyeluruh dengan <strong>PHP dan Laravel</strong>. Semuanya didukung penyimpanan data <strong>PostgreSQL</strong>, <strong>MySQL</strong>, <strong>Firebase</strong>, dan percepatan akses <strong>Redis</strong>, lalu dijalankan dengan rapi menggunakan <strong>Docker</strong> dan <strong>Nginx</strong> pada server Linux.',
+        body: [
+          'Sehari-hari saya membangun sistem pengolahan data menggunakan ',
+          { tag: 'strong', text: 'Golang' },
+          ' serta aplikasi web bisnis menyeluruh dengan ',
+          { tag: 'strong', text: 'PHP dan Laravel' },
+          '. Semuanya didukung penyimpanan data ',
+          { tag: 'strong', text: 'PostgreSQL' },
+          ', ',
+          { tag: 'strong', text: 'MySQL' },
+          ', ',
+          { tag: 'strong', text: 'Firebase' },
+          ', dan percepatan akses ',
+          { tag: 'strong', text: 'Redis' },
+          ', lalu dijalankan dengan rapi menggunakan ',
+          { tag: 'strong', text: 'Docker' },
+          ' dan ',
+          { tag: 'strong', text: 'Nginx' },
+          ' pada server Linux.'
+        ],
         p1Title: 'Komunikasi Sistem yang Jelas',
         p1Desc:
           'Setiap fitur dirancang dengan aturan pertukaran data yang rapi sehingga mudah dihubungkan dengan tampilan aplikasi maupun layanan pihak ketiga.',
@@ -238,7 +285,7 @@
       },
       stack: {
         index: '02 / TEKNOLOGI',
-        heading: 'Teknologi yang<br>saya gunakan.',
+        heading: ['Teknologi yang', { tag: 'br' }, 'saya gunakan.'],
         subcopy: 'Alat dan teknologi terpercaya yang dipilih agar aplikasi bekerja cepat, aman, dan mudah dirawat dalam jangka panjang.',
         catA: 'Bahasa & Kerangka Kerja',
         catB: 'Database & Pengelolaan Data',
@@ -258,7 +305,7 @@
       },
       projects: {
         index: '03 / PROYEK PILIHAN',
-        heading: 'Dibangun untuk kebutuhan<br>operasional sehari-hari.',
+        heading: ['Dibangun untuk kebutuhan', { tag: 'br' }, 'operasional sehari-hari.'],
         filterAll: 'Semua',
         filterApi: 'Layanan & Integrasi',
         filterWeb: 'Aplikasi Web',
@@ -333,9 +380,6 @@
     }
   };
 
-  /* ========================================================================
-     Localized Project Modal Data
-     ======================================================================== */
   const PROJECTS = {
     ecommerce: {
       index: '01',
@@ -511,9 +555,6 @@
 
   const PROJECT_ORDER = ['ecommerce', 'ecommerceCms', 'pricing', 'inventory', 'cms', 'lottery'];
 
-  /* ========================================================================
-     Localized Hero Interactive Architecture Flows
-     ======================================================================== */
   const ARCH_FLOWS = {
     ecommerce: {
       method: 'POST',
@@ -619,14 +660,39 @@
     }
   };
 
-  /* ========================================================================
-     Shared App State & I18n Helpers
-     ======================================================================== */
   let currentLang = document.documentElement.getAttribute('data-lang') === 'id' ? 'id' : 'en';
   const langListeners = [];
 
+  const hasOwn = (obj, key) => Object.prototype.hasOwnProperty.call(obj, key);
+  const ALLOWED_RICH_TAGS = new Set(['br', 'strong', 'span']);
+  const ALLOWED_RICH_CLASSES = new Set(['title-accent']);
+
   function getNested(obj, path) {
-    return path.split('.').reduce((acc, part) => (acc && acc[part] !== undefined ? acc[part] : null), obj);
+    if (!obj || typeof path !== 'string') return null;
+    return path.split('.').reduce(
+      (acc, part) => (acc && typeof acc === 'object' && hasOwn(acc, part) ? acc[part] : null),
+      obj
+    );
+  }
+
+  function renderRichText(el, parts) {
+    if (!Array.isArray(parts)) return;
+    const fragment = document.createDocumentFragment();
+    parts.forEach((part) => {
+      if (typeof part === 'string') {
+        fragment.appendChild(document.createTextNode(part));
+      } else if (part && typeof part === 'object' && ALLOWED_RICH_TAGS.has(part.tag)) {
+        const node = document.createElement(part.tag);
+        if (part.className && ALLOWED_RICH_CLASSES.has(part.className)) {
+          node.className = part.className;
+        }
+        if (typeof part.text === 'string') {
+          node.textContent = part.text;
+        }
+        fragment.appendChild(node);
+      }
+    });
+    el.replaceChildren(fragment);
   }
 
   function t(key) {
@@ -653,10 +719,14 @@
       if (typeof val === 'string') el.textContent = val;
     });
 
-    // Update rich inline HTML nodes
+    // Update rich inline nodes safely without innerHTML
     document.querySelectorAll('[data-i18n-html]').forEach((el) => {
       const val = t(el.dataset.i18nHtml);
-      if (typeof val === 'string') el.innerHTML = val;
+      if (Array.isArray(val)) {
+        renderRichText(el, val);
+      } else if (typeof val === 'string') {
+        el.textContent = val;
+      }
     });
 
     // Update translated aria-labels
@@ -695,9 +765,6 @@
     }
   }
 
-  /* ========================================================================
-     Theme Management
-     ======================================================================== */
   function initTheme() {
     const toggleBtn = document.getElementById('theme-toggle');
     const themeLabel = document.getElementById('theme-label');
@@ -744,9 +811,6 @@
     });
   }
 
-  /* ========================================================================
-     Mobile Navigation Drawer
-     ======================================================================== */
   function initMobileDrawer() {
     const menuBtn = document.getElementById('menu-toggle');
     const drawer = document.getElementById('mobile-drawer');
@@ -788,9 +852,6 @@
     });
   }
 
-  /* ========================================================================
-     Scroll Progress, Back-to-Top, and Active Section Spy
-     ======================================================================== */
   function initScrollTracking() {
     const progressEl = document.getElementById('scroll-progress');
     const scrollTopBtn = document.getElementById('scroll-to-top');
@@ -857,9 +918,6 @@
     }
   }
 
-  /* ========================================================================
-     Scroll-Triggered Reveals (IntersectionObserver)
-     ======================================================================== */
   function initScrollReveals() {
     const revealEls = document.querySelectorAll('.reveal');
     if (!revealEls.length) return;
@@ -892,9 +950,6 @@
     revealEls.forEach((el) => observer.observe(el));
   }
 
-  /* ========================================================================
-     Interactive Backend Architecture Card
-     ======================================================================== */
   function initArchitectureCard() {
     const tabs = Array.from(document.querySelectorAll('.arch-tab'));
     const simulateBtn = document.getElementById('arch-simulate-btn');
@@ -926,8 +981,8 @@
     };
 
     const renderStaticFlow = (key) => {
+      if (!hasOwn(ARCH_FLOWS, key)) return;
       const flow = ARCH_FLOWS[key];
-      if (!flow) return;
       currentKey = key;
       const localized = flow[currentLang] || flow.en;
 
@@ -943,12 +998,22 @@
         if (metaEl) metaEl.textContent = node.meta;
       });
 
-      traceList.innerHTML = localized.traces
-        .map(
-          (msg, idx) =>
-            `<li class="trace-line is-done"><span class="trace-step">0${idx + 1}</span><span class="trace-msg">${msg}</span></li>`
-        )
-        .join('');
+      const traceNodes = localized.traces.map((msg, idx) => {
+        const li = document.createElement('li');
+        li.className = 'trace-line is-done';
+
+        const stepSpan = document.createElement('span');
+        stepSpan.className = 'trace-step';
+        stepSpan.textContent = `0${idx + 1}`;
+
+        const msgSpan = document.createElement('span');
+        msgSpan.className = 'trace-msg';
+        msgSpan.textContent = msg;
+
+        li.append(stepSpan, msgSpan);
+        return li;
+      });
+      traceList.replaceChildren(...traceNodes);
 
       nodes.forEach((n) => {
         n.classList.remove('is-active');
@@ -1027,7 +1092,7 @@
     tabs.forEach((tab) => {
       tab.addEventListener('click', () => {
         const flowKey = tab.dataset.flow;
-        if (!ARCH_FLOWS[flowKey]) return;
+        if (!hasOwn(ARCH_FLOWS, flowKey)) return;
 
         tabs.forEach((tabItem) => {
           const active = tabItem === tab;
@@ -1061,9 +1126,6 @@
     }
   }
 
-  /* ========================================================================
-     Project Filtering with Sliding Indicator
-     ======================================================================== */
   function initProjectFilters() {
     const filterBar = document.querySelector('.filter-bar');
     const indicator = document.getElementById('filter-indicator');
@@ -1119,9 +1181,6 @@
     });
   }
 
-  /* ========================================================================
-     Project Detail Slide-Over Modal
-     ======================================================================== */
   function initProjectModal() {
     const backdrop = document.getElementById('project-modal');
     if (!backdrop) return;
@@ -1143,8 +1202,8 @@
     let lastFocusedEl = null;
 
     const renderModal = (key) => {
+      if (!hasOwn(PROJECTS, key)) return;
       const project = PROJECTS[key];
-      if (!project) return;
       currentProjectKey = key;
       const localized = project[currentLang] || project.en;
 
@@ -1153,15 +1212,37 @@
       titleEl.textContent = localized.title;
       summaryEl.textContent = localized.summary;
 
-      flowEl.innerHTML = localized.flow
-        .map((step, i) => {
-          const sep = i < localized.flow.length - 1 ? '<span class="flow-sep" aria-hidden="true">-&gt;</span>' : '';
-          return `<span class="flow-pill">${step}</span>${sep}`;
-        })
-        .join('');
+      const flowFragment = document.createDocumentFragment();
+      localized.flow.forEach((step, i) => {
+        const pill = document.createElement('span');
+        pill.className = 'flow-pill';
+        pill.textContent = step;
+        flowFragment.appendChild(pill);
+        if (i < localized.flow.length - 1) {
+          const sep = document.createElement('span');
+          sep.className = 'flow-sep';
+          sep.setAttribute('aria-hidden', 'true');
+          sep.textContent = '->';
+          flowFragment.appendChild(sep);
+        }
+      });
+      flowEl.replaceChildren(flowFragment);
 
-      highlightsEl.innerHTML = localized.highlights.map((item) => `<li>${item}</li>`).join('');
-      techEl.innerHTML = project.tech.map((techName) => `<li>${techName}</li>`).join('');
+      highlightsEl.replaceChildren(
+        ...localized.highlights.map((item) => {
+          const li = document.createElement('li');
+          li.textContent = item;
+          return li;
+        })
+      );
+
+      techEl.replaceChildren(
+        ...project.tech.map((techName) => {
+          const li = document.createElement('li');
+          li.textContent = techName;
+          return li;
+        })
+      );
     };
 
     const openModal = (key) => {
@@ -1200,7 +1281,7 @@
     document.querySelectorAll('.project-card').forEach((card) => {
       card.addEventListener('click', (e) => {
         const key = card.dataset.project;
-        if (key && PROJECTS[key]) {
+        if (key && hasOwn(PROJECTS, key)) {
           e.preventDefault();
           openModal(key);
         }
@@ -1245,9 +1326,24 @@
     });
   }
 
-  /* ========================================================================
-     Copy Email UX + Toast Feedback
-     ======================================================================== */
+  function resolveEmail(el) {
+    if (!el || !el.dataset) return '';
+    const user = el.dataset.emailUser;
+    const domain = el.dataset.emailDomain;
+    return user && domain ? `${user}@${domain}` : '';
+  }
+
+  function initEmailLinks() {
+    document.querySelectorAll('[data-email-link]').forEach((link) => {
+      const email = resolveEmail(link);
+      if (!email) return;
+      link.setAttribute('href', `mailto:${email}`);
+      if (link.dataset.emailLink !== 'href-only') {
+        link.textContent = email;
+      }
+    });
+  }
+
   function initCopyEmail() {
     const copyBtn = document.getElementById('copy-email-btn');
     const copyLabel = document.getElementById('copy-email-label');
@@ -1274,8 +1370,7 @@
       const textarea = document.createElement('textarea');
       textarea.value = text;
       textarea.setAttribute('readonly', '');
-      textarea.style.position = 'fixed';
-      textarea.style.opacity = '0';
+      textarea.className = 'clipboard-scratch';
       document.body.appendChild(textarea);
       textarea.select();
       document.execCommand('copy');
@@ -1283,7 +1378,8 @@
     };
 
     copyBtn.addEventListener('click', async () => {
-      const email = copyBtn.dataset.email || 'samuelalviaan@gmail.com';
+      const email = resolveEmail(copyBtn);
+      if (!email) return;
       try {
         await copyText(email);
         copyBtn.classList.add('is-copied');
@@ -1308,9 +1404,6 @@
     });
   }
 
-  /* ========================================================================
-     Dynamic Year & Boot
-     ======================================================================== */
   document.addEventListener('DOMContentLoaded', () => {
     const yearEl = document.getElementById('current-year');
     if (yearEl) {
@@ -1325,6 +1418,7 @@
     initArchitectureCard();
     initProjectFilters();
     initProjectModal();
+    initEmailLinks();
     initCopyEmail();
 
     // Apply initial saved language across all modules without cancelling opening trace
